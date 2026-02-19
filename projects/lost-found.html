@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Lost & Found App — Amit</title>
+  <meta name="description" content="Case study: Digital Lost & Found App built with Node.js, Express, EJS, and JSON file storage." />
+
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="/projects.html">← Back to Projects</a>
+
+      <!-- HEADER -->
+      <header class="case-head" style="margin-top:12px;">
+        <h1>Digital Lost & Found App</h1>
+        <p class="lead">
+          A web app to report lost/found items, browse listings, and manage claims through a simple admin flow.
+          Built as a clean CRUD-style system with clear user navigation.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Node.js</span>
+          <span class="chip">Express</span>
+          <span class="chip">EJS</span>
+          <span class="chip">JSON Storage</span>
+        </div>
+
+        <div class="actions">
+          <!-- Replace # with your real links later -->
+          <a class="btn btn-sm" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noreferrer">Demo (optional)</a>
+        </div>
+      </header>
+
+      <!-- QUICK SUMMARY -->
+      <section class="card">
+        <h2 class="h3">Project Summary</h2>
+
+        <div class="grid-2">
+          <div>
+            <p class="muted">My role</p>
+            <p>Full-stack (routes, views, storage, UI flow)</p>
+          </div>
+          <div>
+            <p class="muted">Type</p>
+            <p>Course project (Node.js & Express)</p>
+          </div>
+
+          <div>
+            <p class="muted">Core features</p>
+            <p>Report lost/found, view items, admin mark claimed, search</p>
+          </div>
+          <div>
+            <p class="muted">Data storage</p>
+            <p>JSON file-based storage (no database)</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <!-- PROBLEM -->
+        <section class="card">
+          <h2 class="h3">Problem</h2>
+          <p>
+            Lost items happen often, but people don’t have a simple way to post details, browse matching items,
+            and track status in one place.
+          </p>
+        </section>
+
+        <!-- SOLUTION -->
+        <section class="card">
+          <h2 class="h3">Solution</h2>
+          <p>
+            A structured web app that lets users submit lost/found reports, view a combined list,
+            and allows an admin to update status when items are claimed.
+          </p>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="card">
+          <h2 class="h3">Key Features</h2>
+          <ul class="list">
+            <li><strong>Home navigation</strong> with clear entry points</li>
+            <li><strong>Report Lost</strong> form (name, description, contact, location, date)</li>
+            <li><strong>Report Found</strong> form (parallel flow to lost)</li>
+            <li><strong>View Items</strong> page showing submitted listings</li>
+            <li><strong>Admin page</strong> to mark items as claimed</li>
+            <li><strong>Search</strong> by item name (client-side filtering)</li>
+          </ul>
+        </section>
+
+        <!-- TECHNICAL -->
+        <section class="card">
+          <h2 class="h3">Technical Implementation</h2>
+          <ul class="list">
+            <li><strong>Express routing</strong> for each flow (lost/found/items/admin)</li>
+            <li><strong>EJS templates</strong> for consistent UI pages</li>
+            <li><strong>JSON file storage</strong> using read/write operations</li>
+            <li>Basic input validation and clean UX structure</li>
+          </ul>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="h3">Outcome</h2>
+          <ul class="list">
+            <li> Working end-to-end submission flow</li>
+            <li> Clear separation of lost vs found reporting</li>
+            <li> Admin can update status to keep listings accurate</li>
+            <li> Simple search helps users find relevant items faster</li>
+          </ul>
+        </section>
+
+        <!-- LEARNED -->
+        <section class="card">
+          <h2 class="h3">What I Learned</h2>
+          <ul class="list">
+            <li>How to structure Express routes + EJS views cleanly</li>
+            <li>How CRUD-like workflows translate into real UI flows</li>
+            <li>How small UI decisions improve usability a lot</li>
+            <li>How file-based JSON storage works as a lightweight “DB”</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- SCREENSHOT -->
+      <section class="section" style="padding-bottom:0;">
+        <div class="card">
+          <h2 class="h3">Screenshot</h2>
+          <p class="muted">Home page UI (navigation + main actions).</p>
+
+          <div class="media">
+            <img
+              src="/asset/images/lost-found-home.png"
+              alt="Digital Lost & Found App home screen"
+              class="media-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- FUTURE -->
+      <section class="section" style="padding-bottom:0;">
+        <div class="card">
+          <h2 class="h3">Future Improvements</h2>
+          <ul class="list">
+            <li>Add image upload for items</li>
+            <li>Add better matching (category + location-based suggestions)</li>
+            <li>Add authentication for admin actions</li>
+            <li>Move from JSON storage to a real database (MongoDB/MySQL)</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

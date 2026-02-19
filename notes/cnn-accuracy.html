@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How I Improved CNN Accuracy — Amit</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="../notes.html">← Back to Notes</a>
+
+      <header class="case-head" style="margin-top:12px;">
+        <h1>How I Improved CNN Accuracy</h1>
+        <p class="lead">
+          A short write-up on what actually moved accuracy: augmentation, architecture tweaks, and schedule discipline.
+        </p>
+
+        <div class="chips">
+          <span class="chip">CNN</span>
+          <span class="chip">Training</span>
+          <span class="chip">Augmentation</span>
+        </div>
+      </header>
+
+      <article class="card note">
+        <h2 class="h3">What was the baseline?</h2>
+        <p>
+          I started with a standard CNN and tracked loss/accuracy per epoch. Early results improved fast, then plateaued.
+        </p>
+        <div class="note-callout">
+            <h2 class="h3" style="margin-top:0;">Result (tracked)</h2>
+            <ul class="list" style="margin:0;">
+                <li><strong>Training:</strong> ran up to <strong>400 epochs</strong></li>
+                <li><strong>Peak training accuracy:</strong> ~<strong>96.6%</strong></li>
+                <li class="muted">Note: training accuracy ≠ test accuracy. I use it to track stability + overfitting, then confirm on evaluation splits.</li>
+            </ul>
+        </div>
+
+
+        <h2 class="h3">What actually improved accuracy</h2>
+        <ul class="list">
+          <li><strong>Better data augmentation</strong> (flip/rotation/crop) to reduce overfitting</li>
+          <li><strong>BatchNorm</strong> to stabilize deeper training</li>
+          <li><strong>Dropout</strong> to improve generalization</li>
+          <li><strong>Learning rate schedule</strong> to keep progress after plateaus</li>
+        </ul>
+
+        <h2 class="h3">My final training habits</h2>
+        <ul class="list">
+          <li>Save curves and compare runs (don’t trust “feels better”)</li>
+          <li>Change one thing at a time</li>
+          <li>Long training only after the setup is stable</li>
+        </ul>
+
+        <h2 class="h3">One takeaway</h2>
+        <p>
+          Most gains came from being systematic: augmentation + stability + schedule — not “random architecture hype”.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

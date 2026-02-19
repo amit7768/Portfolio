@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DSP Restaurant Noise Reduction — Amit</title>
+  <meta name="description" content="Case study: speech enhancement in restaurant noise using FFT analysis, FIR low-pass filtering, spectrogram comparison, and SNR evaluation." />
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="../projects.html">← Back to Projects</a>
+
+      <!-- HEADER -->
+      <header class="case-head" style="margin-top:12px;">
+        <h1>DSP Speech Enhancement (Restaurant Noise)</h1>
+        <p class="lead">
+          A DSP pipeline that mixes clean speech with real restaurant background noise, analyzes frequency content,
+          applies FIR filtering, and evaluates improvement with spectrograms and SNR.
+        </p>
+
+        <div class="chips">
+          <span class="chip">MATLAB</span>
+          <span class="chip">DSP</span>
+          <span class="chip">FIR Filter</span>
+          <span class="chip">FFT</span>
+          <span class="chip">Spectrogram</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-sm" href="https://github.com/amit7768/dsp-restaurant-noise-reduction" target="_blank" rel="noreferrer">
+            GitHub (Full code + audio + plots)
+          </a>
+        </div>
+      </header>
+
+      <!-- SUMMARY -->
+      <section class="card">
+        <h2 class="h3">Project Summary</h2>
+
+        <div class="grid-2">
+          <div>
+            <p class="muted">Goal</p>
+            <p>Reduce restaurant noise and improve speech clarity using classical DSP methods.</p>
+          </div>
+          <div>
+            <p class="muted">My contribution</p>
+            <p>End-to-end DSP pipeline, visualization, and evaluation.</p>
+          </div>
+
+          <div>
+            <p class="muted">Key techniques</p>
+            <p>FFT analysis, FIR low-pass filtering, spectrogram comparison, SNR measurement.</p>
+          </div>
+          <div>
+            <p class="muted">Evidence</p>
+            <p>All generated audio + plots are organized in GitHub for verification.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <section class="card">
+          <h2 class="h3">Problem</h2>
+          <p>
+            Restaurant environments contain overlapping noise sources (people, ambience, clatter).
+            This makes speech harder to understand and challenges simple filtering.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">Solution</h2>
+          <p>
+            Build a reproducible DSP workflow: create a noisy mixture, inspect frequency content,
+            apply FIR filtering, then compare before/after using spectrograms and SNR.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">Pipeline</h2>
+          <ol class="list">
+            <li>Load clean speech + restaurant background</li>
+            <li>Mix signals to create a realistic noisy sample</li>
+            <li>Analyze with FFT (find dominant noise bands)</li>
+            <li>Apply FIR low-pass filter (reduce high-frequency noise)</li>
+            <li>Compare with spectrograms + compute SNR improvement</li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">Outcome</h2>
+          <ul class="list">
+            <li>Noise energy reduced in higher-frequency regions</li>
+            <li>Spectrogram shows clearer speech structure after filtering</li>
+            <li>Full outputs (audio + plots) are available on GitHub</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- VISUAL EVIDENCE -->
+      <section class="section" style="padding-bottom:0;">
+        <div class="card">
+          <h2 class="h3">Spectrogram Comparison</h2>
+          <p class="muted">
+            Clean vs Noisy vs Filtered — this is the main “proof” in the portfolio.
+            (More plots + audio are in GitHub.)
+          </p>
+
+          <div class="spec-grid">
+            <figure class="spec">
+              <img class="spec-img" src="../asset/images/dsp-spec-clean.png" alt="Spectrogram of clean speech" />
+              <figcaption class="muted">Clean speech</figcaption>
+            </figure>
+
+            <figure class="spec">
+              <img class="spec-img" src="../asset/images/dsp-spec-noisy.png" alt="Spectrogram of noisy mixture" />
+              <figcaption class="muted">Noisy mixture</figcaption>
+            </figure>
+
+            <figure class="spec">
+              <img class="spec-img" src="../asset/images/dsp-spec-filtered.png" alt="Spectrogram after FIR filtering" />
+              <figcaption class="muted">After FIR filtering</figcaption>
+            </figure>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn btn-sm btn-ghost" href="https://github.com/amit7768/dsp-restaurant-noise-reduction" target="_blank" rel="noreferrer">
+              View full report (audio + all images)
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

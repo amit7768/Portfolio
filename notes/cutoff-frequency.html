@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Cutoff Frequency Matters — Amit</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="../notes.html">← Back to Notes</a>
+
+      <header class="case-head" style="margin-top:12px;">
+        <h1>Why Cutoff Frequency Matters</h1>
+        <p class="lead">
+          A simple explanation of cutoff frequency and why choosing it wrong can either keep noise or destroy speech clarity.
+        </p>
+
+        <div class="chips">
+          <span class="chip">DSP</span>
+          <span class="chip">Filters</span>
+          <span class="chip">Cutoff Frequency</span>
+        </div>
+      </header>
+
+      <article class="card note">
+        <h2 class="h3">Cutoff frequency in one line</h2>
+        <p>
+          The cutoff frequency is the “border” where a filter starts reducing parts of the signal.
+          Below the cutoff, we mostly keep the signal. Above it, we reduce it (for a low-pass filter).
+        </p>
+
+        <h2 class="h3">Why it matters in speech</h2>
+        <p>
+          Speech is spread across frequencies. If your cutoff is too low, the voice becomes muffled because you removed
+          important speech components. If your cutoff is too high, you keep too much noise.
+        </p>
+
+        <h2 class="h3">The real trade-off</h2>
+        <ul class="list">
+          <li><strong>Lower cutoff</strong> → stronger noise removal, but risk losing speech detail</li>
+          <li><strong>Higher cutoff</strong> → better speech detail, but more noise remains</li>
+        </ul>
+
+        <h2 class="h3">How I chose the cutoff (practical)</h2>
+        <ul class="list">
+          <li>I inspected the noisy signal using <strong>FFT</strong> / spectrogram to see where noise dominates.</li>
+          <li>I selected a cutoff that reduces the noisy band while keeping the core speech region.</li>
+          <li>I validated the choice by comparing <strong>before/after spectrograms</strong> and SNR.</li>
+        </ul>
+
+        <h2 class="h3">If a professor asks “Why 1.5 kHz?”</h2>
+        <p>
+          My answer:
+          “I chose it to reduce higher-frequency restaurant noise while keeping the speech energy that matters most for clarity.
+          Then I verified it with spectrogram comparison and SNR — not guesswork.”
+        </p>
+
+        <h2 class="h3">One takeaway</h2>
+        <p>
+          Cutoff frequency is not a random number — it’s a decision that must be justified by frequency analysis and verified by results.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

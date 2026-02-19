@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Profile Card Generator - Amit</title>
+  <meta name="description" content="React app that generates a profile card from user inputs with live preview and localStorage persistence." />
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="../projects.html">← Back to Projects</a>
+
+      <header class="case-head" style="margin-top:12px;">
+        <h1>Digital Profile Card Generator</h1>
+        <p class="lead">
+          A small React app that turns user input into a clean profile card in real-time.
+          It also saves the card data in <strong>localStorage</strong>, so the card stays after refresh.
+        </p>
+
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">UI / Components</span>
+          <span class="chip">localStorage</span>
+          <span class="chip">State</span>
+        </div>
+
+        <div class="actions">
+          <!-- Replace # with your real links -->
+          <a class="btn btn-sm" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 class="h3">Project Summary</h2>
+        <div class="grid-2">
+          <div>
+            <p class="muted">Goal</p>
+            <p>Create a smooth “input → live preview” profile card generator.</p>
+          </div>
+          <div>
+            <p class="muted">My contribution</p>
+            <p>Solo build: React state, components, persistence, styling.</p>
+          </div>
+          <div>
+            <p class="muted">Core features</p>
+            <p>Live preview, default image fallback, persistent data (localStorage).</p>
+          </div>
+          <div>
+            <p class="muted">Tech</p>
+            <p>React (CRA) • Components • Hooks (useState/useEffect)</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <section class="card">
+          <h2 class="h3">What it does</h2>
+          <ul class="list">
+            <li>User enters <strong>Name</strong>, <strong>Hobby</strong>, <strong>Quote</strong>, and <strong>Image URL</strong></li>
+            <li>Profile card updates instantly (live preview)</li>
+            <li>If no image URL, it shows a friendly default placeholder</li>
+            <li>Automatically saves and reloads using <strong>localStorage</strong></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">How it’s built</h2>
+          <ul class="list">
+            <li><strong>App</strong> manages input state (useState)</li>
+            <li><strong>useEffect</strong> loads saved profile data on first render</li>
+            <li><strong>useEffect</strong> saves profile data whenever inputs change</li>
+            <li><strong>ProfileCard</strong> component renders the UI cleanly</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">What I learned</h2>
+          <ul class="list">
+            <li>Component separation (App vs ProfileCard)</li>
+            <li>State-driven UI and controlled form inputs</li>
+            <li>Practical persistence with localStorage</li>
+            <li>UI polish with spacing, hierarchy, and friendly UX</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="h3">Future improvements</h2>
+          <ul class="list">
+            <li>Add download as image (export card)</li>
+            <li>Add theme switcher (dark/light card styles)</li>
+            <li>Add multiple saved cards (like templates)</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="section" style="padding-bottom:0;">
+  <div class="card">
+    <h2 class="h3">Screenshot</h2>
+    <p class="muted">
+      One clean view of the app (more details will be added in GitHub later).
+    </p>
+
+    <figure class="spec" style="max-width: 980px;">
+      <img class="spec-img" src="../asset/images/digital-card.png" alt="Digital Profile Card Generator screenshot" />
+      <figcaption class="muted">Input form → live preview profile card.</figcaption>
+    </figure>
+  </div>
+</section>
+  </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
