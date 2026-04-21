@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CNN Model — Amit</title>
+  <meta name="description" content="Case study: CNN trained on CIFAR-10 with augmentation and a deep CNN architecture. Trained for 400 epochs with ~96.6% training accuracy." />
+
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="section">
+    <div class="container">
+      <a class="link" href="/projects.html">← Back to Projects</a>
+
+      <!-- HEADER -->
+      <header class="case-head" style="margin-top:12px;">
+        <h1>CNN Image Classification</h1>
+        <p class="lead">
+          Built and trained a custom deep CNN with strong data augmentation and tracked performance over long training.
+          The goal was to push accuracy through iteration and disciplined evaluation.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">CNN</span>
+          <span class="chip">CIFAR-10</span>
+        </div>
+
+        <div class="actions">
+          <!-- Replace # later -->
+          <a class="btn btn-sm" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-sm btn-ghost" href="#" target="_blank" rel="noreferrer">Notebook</a>
+        </div>
+      </header>
+
+      <!-- QUICK SUMMARY -->
+      <section class="card">
+        <h2 class="h3">Project Summary</h2>
+
+        <div class="grid-2">
+          <div>
+            <p class="muted">Goal</p>
+            <p>Train a deep CNN and improve accuracy using augmentation + tuning</p>
+          </div>
+          <div>
+            <p class="muted">Dataset</p>
+            <p>CIFAR-10 (32×32 RGB, 10 classes)</p>
+          </div>
+
+          <div>
+            <p class="muted">Training (final run)</p>
+            <p><strong>400 epochs</strong> • long training with tracked metrics</p>
+          </div>
+          <div>
+            <p class="muted">Best accuracy</p>
+            <p><strong>~96.6%</strong> (training accuracy)</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <!-- ARCHITECTURE -->
+        <section class="card">
+          <h2 class="h3">Model Architecture</h2>
+          <ul class="list">
+            <li>Deep CNN with stacked convolution blocks</li>
+            <li>Conv blocks use <strong>BatchNorm</strong> + <strong>LeakyReLU</strong> + <strong>MaxPool</strong></li>
+            <li><strong>Dropout</strong> used to reduce overfitting</li>
+            <li>Final classifier head outputs 10 classes</li>
+          </ul>
+        </section>
+
+        <!-- TRAINING SETUP -->
+        <section class="card">
+          <h2 class="h3">Training Setup</h2>
+          <ul class="list">
+            <li><strong>Loss:</strong> CrossEntropyLoss</li>
+            <li><strong>Optimizer:</strong> SGD + momentum (stable training for CNNs)</li>
+            <li><strong>Regularization:</strong> weight decay + dropout</li>
+            <li><strong>Scheduler:</strong> learning-rate decay (for late-stage refinement)</li>
+          </ul>
+        </section>
+
+        <!-- AUGMENTATION -->
+        <section class="card">
+          <h2 class="h3">Data Augmentation</h2>
+          <p class="muted">Used to improve generalization and reduce overfitting.</p>
+          <ul class="list">
+            <li>RandomHorizontalFlip</li>
+            <li>RandomRotation</li>
+            <li>RandomResizedCrop</li>
+            <li>Normalize</li>
+          </ul>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="card">
+          <h2 class="h3">Results</h2>
+          <ul class="list">
+            <li><strong>Peak training accuracy:</strong> ~96.6%</li>
+            <li>Training remained stable across long runs (hundreds of epochs)</li>
+            <li>Saved curves + logs to track loss/accuracy over time</li>
+          </ul>
+        </section>
+
+        <!-- WHAT I LEARNED -->
+        <section class="card">
+          <h2 class="h3">What I Learned</h2>
+          <ul class="list">
+            <li>Why augmentation boosts robustness</li>
+            <li>How BatchNorm stabilizes deeper networks</li>
+            <li>How LR scheduling affects late-epoch improvements</li>
+            <li>How to debug training using curves + logs</li>
+          </ul>
+        </section>
+
+        <!-- NEXT -->
+        <section class="card">
+          <h2 class="h3">Next Improvements</h2>
+          <ul class="list">
+            <li>Report <strong>test accuracy</strong> + per-class accuracy</li>
+            <li>Add confusion matrix and error analysis</li>
+            <li>Try stronger architectures (ResNet/EfficientNet)</li>
+            <li>Make evaluation transforms deterministic (no random augments in test)</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- EVIDENCE / SCREENSHOTS -->
+      <section class="section" style="padding-bottom:0;">
+        <div class="card">
+          <h2 class="h3">Training Log (evidence)</h2>
+          <p class="muted">Screenshot from late-stage training showing high accuracy around epoch 250+.</p>
+
+          <div class="media">
+            <img
+              src="/asset/images/cnn-train-log.png"
+              alt="CNN training log showing accuracy"
+              class="media-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- OPTIONAL: add curves later -->
+      <section class="section" style="padding-bottom:0;">
+        <div class="card">
+          <h2 class="h3">Curves </h2>
+          
+          <div class="fig-grid">
+            <figure class="fig">
+              <img class="fig-img" src="/asset/images/cnn-loss-curve.png" alt="CNN loss curve" />
+              <figcaption class="muted">Loss curve </figcaption>
+            </figure>
+
+            <figure class="fig">
+              <img class="fig-img" src="/asset/images/cnn-accuracy-curve.png" alt="CNN accuracy curve" />
+              <figcaption class="muted">Accuracy curve </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
